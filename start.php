@@ -10,3 +10,9 @@ function autoload ($classname)
 spl_autoload_register("autoload");
 
 $pdo = new PDO('mysql:host=localhost; dbname=blogger', 'root', '');
+
+$res = $pdo->query("SELECT * FROM `posts`");
+
+foreach ($res as $row) {
+	var_dump($row);
+}
